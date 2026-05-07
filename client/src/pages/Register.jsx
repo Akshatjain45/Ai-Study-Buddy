@@ -106,7 +106,7 @@ const Register = () => {
                     value={form.name}
                     onChange={handleChange}
                     className="input pl-10"
-                    placeholder="Kushagra Bajpei"
+                    placeholder="Akshat Jain"
                     autoComplete="name"
                   />
                 </div>

@@ -1,0 +1,3 @@
+ac-bqudadc-shard-00-01.yzpocwp.mongodb.net
+ac-bqudadc-shard-00-02.yzpocwp.mongodb.net
+ac-bqudadc-shard-00-00.yzpocwp.mongodb.net

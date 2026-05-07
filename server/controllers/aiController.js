@@ -157,12 +157,12 @@ const generateQuiz = async (req, res) => {
 
     const prompt = `Create exactly 5 multiple choice questions about "${topic}" for a ${level} level student.
 
-Return ONLY a valid JSON array (no markdown, no explanation, just the JSON):
+Return ONLY a valid JSON array (no markdown, no explanation, just the JSON). Use real questions and real options related to the topic, do NOT use placeholder text like 'Option A'.
 [
   {
-    "question": "Question text here?",
-    "options": ["Option A", "Option B", "Option C", "Option D"],
-    "answer": "Option A",
+    "question": "Actual question text here?",
+    "options": ["First real option", "Second real option", "Third real option", "Fourth real option"],
+    "answer": "First real option",
     "explanation": "Brief explanation of why this answer is correct"
   }
 ]
@@ -212,7 +212,7 @@ const generatePlan = async (req, res) => {
 
     const prompt = `Create a detailed 7-day study plan for learning "${topic}" at a ${level} level.${weakContext}
 
-Return ONLY valid JSON (no markdown, no explanation):
+Return ONLY valid JSON (no markdown formatting, no code blocks, no explanation):
 {
   "title": "7-Day ${topic} Mastery Plan",
   "overview": "2-3 sentence overview of what the student will achieve",
@@ -229,7 +229,8 @@ Return ONLY valid JSON (no markdown, no explanation):
       "resources": ["Resource or activity suggestion"]
     }
   ]
-}`;
+}
+Ensure the output is perfectly valid JSON.`;
 
     const { content, fallback } = await callAI(prompt, 'plan', topic, level);
 
